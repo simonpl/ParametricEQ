@@ -29,7 +29,7 @@ from gi.repository import GObject
 from gi.repository import RB
 import sys
 import rb
-import lxml.etree as ET
+import xml.etree.ElementTree as ET
 
 def pygobject_version():
     ''' 
@@ -594,10 +594,10 @@ class ApplicationShell(object):
               'tools' or 'view'
             '''
             if is_rb3(self.shell):
-                root = ET.fromstring(ui_string)
-                for elem in root.findall(".//menuitem"):
-                    action_name = elem.attrib['action']
-                    item_name = elem.attrib['name']
+                #root = ET.fromstring(ui_string)
+                #for elem in root.findall(".//menuitem"):
+                    action_name = 'Equalize'#elem.attrib['action']
+                    item_name = 'MyEQName'#elem.attrib['name']
                     
                     group = self._action_groups[group_name]
                     act = group.get_action(action_name)

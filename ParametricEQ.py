@@ -54,7 +54,6 @@ class ParametricEQPlugin (GObject.Object, Peas.Activatable):
         del self.eq
 
     def apply_settings(self,params):
-        return
         numEQBands = len( params )
         result = False
         print "num-bands : ", numEQBands
